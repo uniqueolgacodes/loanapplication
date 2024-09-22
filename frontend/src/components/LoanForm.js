@@ -58,7 +58,7 @@ const LoanForm = () => {
     e.preventDefault();
     try {
         console.log(formData);
-      const response = await axios.post('http://localhost:5000/api/loans/apply', formData);
+      const response = await axios.post('https://loanapplication-zzdi.onrender.com/api/loans/apply', formData);
       alert('Applied Successfully, we will reach out to you');
     } catch (error) {
       console.error('There was an error applying:', error);

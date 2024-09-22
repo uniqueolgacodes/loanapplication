@@ -7,7 +7,7 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     const fetchApplications = async () => {
-      const res = await axios.get('http://localhost:5000/api/loans/applications');
+      const res = await axios.get('https://loanapplication-zzdi.onrender.com/api/loans/applications');
       setApplications(res.data);
     };
     fetchApplications();
