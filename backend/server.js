@@ -26,7 +26,7 @@ setInterval(() => {
     .catch((err) => {
       console.error('Error sending keep-alive request:', err.message);
     });
-}, 180000);  // 180,000 milliseconds = 3 minutes
+}, 120000);  // 180,000 milliseconds = 3 minutes
 
 // Keep-alive route
 app.get('/keep-alive', (req, res) => {
