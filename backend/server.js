@@ -17,16 +17,16 @@ app.use(express.json());
 // Routes
 app.use('/api/loans', loanRoutes);
 
-// Keep-alive request to the server itself every 10 minutes
+// Keep-alive request to the Render server every 3 minutes
 setInterval(() => {
-  axios.get(`http://localhost:${PORT}/keep-alive`)
+  axios.get('https://loanapplication-zzdi.onrender.com/keep-alive')
     .then(() => {
       console.log('Keep-alive request sent');
     })
     .catch((err) => {
       console.error('Error sending keep-alive request:', err.message);
     });
-}, 600000);  // 600,000 milliseconds = 10 minutes
+}, 180000);  // 180,000 milliseconds = 3 minutes
 
 // Keep-alive route
 app.get('/keep-alive', (req, res) => {
